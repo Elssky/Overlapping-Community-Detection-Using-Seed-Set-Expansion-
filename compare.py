@@ -46,46 +46,46 @@ G=gb.file_graph_building( sys.argv[1] )
 
 
 t = time.time()
-print "filtering_phase processing...."
+print("filtering_phase) processing...."
 
 
 G= filtering_phase( G  )
-print len(G.nodes())
+print(len(G.nodes()))
 
 
 #mon_fichier.write("Filtering phase in :"+repr(time.time()-t)+"\n")
 
-print "filtering_phase done!"
+print("filtering_phase) done!"
 
 t = time.time()
 
-print "seeding phase"
+print("seeding) phase"
 
 seeds= gc.Graclus_centers( G  )
 
 #mon_fichier.write("seeding phase in :"+repr(time.time()-t)+"\n")
-print "seeding phase done!"
+print("seeding) phase done!"
 
 t = time.time()
 
-print "seed set expansion phase"
+print("seed) set expansion phase"
 
 expansion=sse.seed_set_expansion(G,seeds)
 #mon_fichier.write("seed set expansion  phase in :"+repr(time.time()-t)+"\n")
-print "seedingset expansion phase done!"
+print("seedingset) expansion phase done!"
 
 #seeds= gc.Graclus_centers( G  )
-#print seeds
-#print gc.minimum_of_float_list(seeds.values())
+#print(seeds)
+#print(gc.minimum_of_float_list(seeds.values()))
 
 #degCi=sum(G.degree(G.nodes()))
 
 
-#print G.nodes()
-#print G.edges()
+#print(G.nodes())
+#print(G.edges())
 #G=nx.to_numpy_matrix(G, nodelist=G.nodes())
-#print G
-print "Graph building with coloring community"
+#print(G)
+print("Graph) building with coloring community"
 
 
 
@@ -108,7 +108,7 @@ for valeur in expansion.values():
 
 #nx.draw_networkx(G,pos=sp,with_labels=False,node_size=35)
 
-print "building graph  done!"
+print("building) graph  done!"
 mon_fichier.close()
 #plt.show()
 
@@ -125,7 +125,7 @@ for val in part.values():
 		continue
 	else:
 		clusters.append(val)
-print clusters
+print(clusters)
 
 for cluster in clusters:
 	string =""

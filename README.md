@@ -1,5 +1,6 @@
 # Overlapping-Community-Detection-Using-Seed-Set-Expansion-
 # How to execute
+## Here we convert the code to an implementation in python3
 Dans votre terminal ,installer les librairies suivantes avec pip en tapant les commandes suivantes:
 pip install networkx
 pip install community

@@ -23,7 +23,7 @@ def seed_set_expansion(G,seeds):
 			#Visualize the vertex neighborhood
 			Vertex_Neighbors = G.neighbors(vertexid)
 			#Choose a vertex from the vertex neighborhood to start the next random walk
-			vertexid = rdm.choice(Vertex_Neighbors)
+			vertexid = rdm.choice(list(Vertex_Neighbors))
 			compteur = compteur + 1
 		mostvisited = sorted(VisitedVertex, key = VisitedVertex.get,reverse = True)
 		expansion.update({seed: mostvisited})	
@@ -41,7 +41,7 @@ def color_building_list(G,expansion):
 		valeur = valeur+1
 	
 	values = [partition.get(node) for node in G.nodes()]
-	print values
+	print(values)
 	for i, val in enumerate(values):
 		if val == None:
 			values[i]=values[i-1]
